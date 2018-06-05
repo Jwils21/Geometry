@@ -5,20 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Geometry {
-	class Square {
-		//What data do we need so we can let this class model a square to calculate the area of a square.
-		// we need length of side and the magnitude of that measure
+	class Square : Rectangle{
 
-		public double LengthOfSides { get; set; }
+		public override int GetArea() {
+			return this.Side1 * this.Side2;
+		}
 
-		public double GetArea() {
-			return LengthOfSides * LengthOfSides;
+		public Square(int LenOfSide) : base(LenOfSide, LenOfSide) {
 		}
-		public double GetPerimeter() {
-			return LengthOfSides * 4;
-		}
-		public void Print() {
-			Console.WriteLine($"A square with length {LengthOfSides} has an area of {GetArea()} and a perimeter of {GetPerimeter()}");
+
+		public Square() {
 
 		}
 
